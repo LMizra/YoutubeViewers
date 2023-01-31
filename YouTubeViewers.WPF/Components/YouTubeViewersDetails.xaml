@@ -21,7 +21,7 @@
 
 
                 <TextBlock Grid.Row="0" 
-                           Text="Liam"
+                           Text="{Binding Username}"
                            FontSize="24"/>
                 
                 <Grid Grid.Row="1" Margin="0,20,0,0">
@@ -37,7 +37,7 @@
 
                     <TextBlock Grid.Column="1" 
                                Margin="20,0,0,0"
-                               Text="yes"
+                               Text="{Binding IsSubscribedDisplay}"
                                FontWeight="bold"/>
                 </Grid>
                 <Grid Grid.Row="2" Margin="0,20,0,0">
@@ -47,12 +47,12 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Column="0" 
-                               Text="Is Member?"
+                              Text="Is Member?"
                                FontWeight="Bold"
                                />
 
-                    <TextBlock Grid.Column="1" 
-                               Text="yes"
+                    <TextBlock Grid.Column="1"
+                               Text="{Binding IsMemberDisplay}"
                                FontWeight="bold"
                                Margin="20,0,0,0"
                                />
