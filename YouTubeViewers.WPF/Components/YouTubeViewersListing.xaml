@@ -20,7 +20,7 @@
                             x:Name="border"
                             Background="White"
                             CornerRadius="5"/>
-                <ListView BorderThickness=" 0" ItemsSource="{Binding YouTubeViewersListingItemViewModels}">
+                <ListView BorderThickness=" 0" SelectedItem="{Binding SelectedYouTubeViewerListingItemViewModel}" ItemsSource="{Binding YouTubeViewersListingItemViewModels}">
                     <ListView.ItemContainerStyle> <!--Pushes the dropdown all the way to the right.-->
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

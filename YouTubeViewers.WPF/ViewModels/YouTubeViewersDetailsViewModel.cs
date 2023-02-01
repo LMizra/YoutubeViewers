@@ -13,10 +13,13 @@ namespace YouTubeViewers.WPF.ViewModels
         private readonly SelectedYouTubeViewerStore _selectedYouTubeViewerStore;
 
         private YouTubeViewer SelectedYouTubeViewer => _selectedYouTubeViewerStore.SelectedYouTubeViewer;
-        
-        public string Username => SelectedYouTubeViewer?.Username;
+
+        // UI shouldnt display the data if no user is selected
+
+        public bool HasSelectedYouTuberViewer => SelectedYouTubeViewer != null;
+        public string Username => SelectedYouTubeViewer?.Username ?? "Unknown";
         public string IsSubscribedDisplay => (SelectedYouTubeViewer?.IsSubscribed ?? false) ? "Yes" : "No";
-        public string IsMemberDisplay { get; }
+        public string IsMemberDisplay => (SelectedYouTubeViewer?.IsMember ?? false) ? "Yes" : "No"; 
 
         public YouTubeViewersDetailsViewModel(SelectedYouTubeViewerStore selectedYouTubeViewerStore)
         {

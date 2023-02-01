@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using YouTubeViewers.WPF.Models;
 
 namespace YouTubeViewers.WPF.ViewModels
 {
@@ -11,7 +12,8 @@ namespace YouTubeViewers.WPF.ViewModels
     //this is a list of YouTube Viewers -- Listing Items 
     public class YouTubeViewersListingItemViewModel :ViewModelBase
     {
-        public String Username { get; }
+        public YouTubeViewer YouTubeViewer { get; }
+        public String Username => YouTubeViewer.Username;
 
         public ICommand EditCommand { get; }
 
@@ -19,11 +21,10 @@ namespace YouTubeViewers.WPF.ViewModels
 
         //constructor
 
-        public YouTubeViewersListingItemViewModel(string username)
+        public YouTubeViewersListingItemViewModel(YouTubeViewer youTubeViewer)
         {
-            Username = username;
+            this.YouTubeViewer = youTubeViewer;
         }
-
 
 
     }
