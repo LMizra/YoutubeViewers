@@ -24,7 +24,24 @@ namespace YouTubeViewers.WPF.ViewModels
         public YouTubeViewersDetailsViewModel(SelectedYouTubeViewerStore selectedYouTubeViewerStore)
         {
             _selectedYouTubeViewerStore = selectedYouTubeViewerStore;
+
+            _selectedYouTubeViewerStore.SelectedYouTubeViewerChanged += _selectedYouTubeViewerStore_SelectedYouTubeViewerChanged;
         }
 
+        //'YouTubeViewersDetailsViewModel will never be able to clean up as it always has a reference to the store so it would need to be disposed.
+        protected override void Dispose()
+        {
+            _selectedYouTubeViewerStore.SelectedYouTubeViewerChanged += _selectedYouTubeViewerStore_SelectedYouTubeViewerChanged;
+        }
+
+        private void _selectedYouTubeViewerStore_SelectedYouTubeViewerChanged()
+        {
+            OnPropertyChanged(nameof(HasSelectedYouTuberViewer));
+            OnPropertyChanged(nameof(Username));
+            OnPropertyChanged(nameof(IsSubscribedDisplay));
+            OnPropertyChanged(nameof(IsMemberDisplay));
+            
+
+        }
     }
 }

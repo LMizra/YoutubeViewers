@@ -17,6 +17,12 @@ namespace YouTubeViewers.WPF.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+       
+
+        protected virtual void Dispose() //virtual so other classes can use dispose.
+        {
+
+        }
     }
 }
 
