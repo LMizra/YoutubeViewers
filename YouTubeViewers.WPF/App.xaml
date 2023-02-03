@@ -6,7 +6,11 @@
         <ResourceDictionary>
             <SolidColorBrush x:Key="BorderPrimary" Color="#1c1c1c"/>
 
-            <Style TargetType="Button">
+            <Style x:Key="PageHeader" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="32"/>
+            </Style>
+
+                <Style TargetType="Button">
                 <Setter Property="Foreground" Value="white"/>
                 <Setter Property="Background" Value="#547aff"/>
                 <Setter Property="Padding" Value="15 5"/>
