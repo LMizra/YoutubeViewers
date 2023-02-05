@@ -8,12 +8,8 @@
         Title="YouTube Viewers" Height="450" Width="800"
         FontSize="14">
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-    <StackPanel Margin="25">
-        <views:AddYouTubeViewerView/>
-        <views:EditYouTubeViewerView/>
-
-        <!--<views:YouTubeViewersView/> -->
-
-    </StackPanel>
+        <Grid Margin="25">
+            <views:YouTubeViewersView DataContext="{Binding YouTubeViewersViewModel}"/> <!--YouTubeViewersViewModel becomes the mainviewmodel which is the data context for the main window. context = information displayed on screen. -->
+    </Grid>
     </ScrollViewer>
 </Window>

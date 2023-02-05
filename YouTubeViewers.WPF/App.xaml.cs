@@ -15,19 +15,22 @@ namespace YouTubeViewers.WPF
     /// </summary>
     public partial class App : Application
     {
-
+        private readonly ModalNavigationStore _modalNavigationStore; //defining the store
         private readonly SelectedYouTubeViewerStore _selectedYouTubeViewerStore; //single source of truth so only 1 store. being defined here, being passed down through application 'app'
 
         public App()
         {
+            _modalNavigationStore = new ModalNavigationStore();
             _selectedYouTubeViewerStore= new SelectedYouTubeViewerStore();
         }
         protected override void OnStartup(StartupEventArgs e)
         {
+            YouTubeViewersViewModel youTubeViewersViewModel = new YouTubeViewersViewModel(_selectedYouTubeViewerStore);
+
             MainWindow = new MainWindow()
             {
 
-                DataContext = new YouTubeViewersViewModel(_selectedYouTubeViewerStore) //this pulls the YouTubeViewersViewModel class and all its methods so it shows on startup.
+                DataContext =new MainViewModel(_modalNavigationStore, youTubeViewersViewModel) //this pulls the YouTubeViewersViewModel class and all its methods so it shows on startup.
 
             };
                 
