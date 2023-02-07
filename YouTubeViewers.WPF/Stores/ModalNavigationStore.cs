@@ -7,7 +7,7 @@ using YouTubeViewers.WPF.ViewModels;
 
 namespace YouTubeViewers.WPF.Stores
 {
-    class ModalNavigationStore
+   public class ModalNavigationStore
     {
         private ViewModelBase _currentViewModel;
 
