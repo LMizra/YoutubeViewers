@@ -40,6 +40,9 @@ namespace YouTubeViewers.WPF.ViewModels
         }
 
         private bool _isMemeber;
+
+        
+
         public bool IsMemeber
         {
             get { return _isMemeber; }
@@ -48,6 +51,12 @@ namespace YouTubeViewers.WPF.ViewModels
         public bool CanSubmit => !string.IsNullOrEmpty(Username);
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
+        public YouTubeViewerDetailsFormViewModel(ICommand submitCommand, ICommand cancelCommand)
+        {
+            SubmitCommand = submitCommand;
+            CancelCommand = cancelCommand;
+        }
+
     }
     
 }

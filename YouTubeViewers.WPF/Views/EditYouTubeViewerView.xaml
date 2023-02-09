@@ -16,6 +16,8 @@
                        Text="Edit YouTube Viewer" 
                        Style="{StaticResource PageHeader}"/>
 
-        <components:YouTubeViewerDetailForm Grid.Row="1" Margin="0,20,0,0"/>
+        <components:YouTubeViewerDetailForm Grid.Row="1" 
+                                            Margin="0,20,0,0"
+                                            DataContext="{Binding YouTubeViewerDetailsFormViewModel}"/>
     </Grid>
 </UserControl>
